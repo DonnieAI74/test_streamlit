@@ -10,7 +10,7 @@ import yaml
 from yaml.loader import SafeLoader
 
 # ── 1. Load credentials ────────────────────────────────────────
-with open("first_streamlit_app/credentials.yaml") as file:
+with open("credentials.yaml") as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 # ── 2. Create authenticator instance ───────────────────────────
