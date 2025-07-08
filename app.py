@@ -38,7 +38,7 @@ if st.session_state.get("authentication_status"):
     # 4-b  Greeting
     st.sidebar.success(f"Welcome {st.session_state.get('name')}!")
 
-    st.logo("imagines/logo-wavetransition_long.png", size="medium",link="https://www.wavetransition.com/")
+    st.logo("logo-wavetransition_long.png", size="medium",link="https://www.wavetransition.com/")
     
     # 4-c  Simple multi-page navigation
     def home_page():
