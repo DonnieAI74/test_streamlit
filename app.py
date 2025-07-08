@@ -8,6 +8,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
+import pandas as pd
 
 # ── 1. Load credentials ────────────────────────────────────────
 with open("credentials.yaml") as file:
