@@ -45,7 +45,7 @@ if st.session_state.get("authentication_status"):
         st.header("🏠 Home")
         st.write("Put your landing-page widgets here.")
 
-        )
+        
 
 #    page = st.sidebar.radio("Navigate to:", ("Home", "Data", "About"))
 
