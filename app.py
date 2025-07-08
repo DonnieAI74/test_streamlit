@@ -49,8 +49,8 @@ if st.session_state.get("authentication_status"):
 
 #    page = st.sidebar.radio("Navigate to:", ("Home", "Data", "About"))
 
-    if page == "Home":
-        home_page()
+ #   if page == "Home":
+  #      home_page()
 
 
 # ───────────────────────────────────────────────────────────────
