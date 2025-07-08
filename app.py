@@ -47,7 +47,7 @@ if st.session_state.get("authentication_status"):
     st.empty()
     st.subheader("Articles prioritized based on Machine Learning.")
     
-       try:
+    try:
         df = pd.read_csv("daily_ranked.csv")
         filtered_df = df[df["ranking"].isin([1, 2])]
 
