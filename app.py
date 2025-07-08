@@ -47,10 +47,39 @@ if st.session_state.get("authentication_status"):
     st.empty()
     st.subheader("Articles prioritized based on Machine Learning.")
     
-    # 4-c  Simple multi-page navigation
-    def home_page():
-        st.header("🏠 Home")
-        st.write("Put your landing-page widgets here.")
+       try:
+        df = pd.read_csv("daily_ranked.csv")
+        filtered_df = df[df["ranking"].isin([1, 2])]
+
+        if filtered_df.empty:
+            st.warning("No news articles with ranks 1 or 2 found.")
+        else:
+            #st.sidebar.title("News Ranking Options")
+            max_items = st.sidebar.slider("Max articles per source", 1, 20, 5)
+
+            grouped = filtered_df.groupby("source")
+
+            for source, group in grouped:
+                with st.expander(f"📡 Source: {source}", expanded=False):
+                    articles_displayed = 0
+                    for _, row in group.iterrows():
+                        st.markdown(
+                            f"• **[{row['title']}]({row['link']})** "
+                            f"<br><sup>📅 {row['date']} | 🏷️ Rank {row['ranking']}</sup>",
+                            unsafe_allow_html=True,
+                        )
+                        articles_displayed += 1
+                        if articles_displayed >= max_items:
+                            break
+
+    except Exception as e:
+        st.error(f"Error loading news data: {e}") 
+
+
+   # 4-c  Simple multi-page navigation
+    #def home_page():
+     #   st.header("🏠 Home")
+      #  st.write("Put your landing-page widgets here.")
 
         
 
