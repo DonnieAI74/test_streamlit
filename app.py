@@ -39,6 +39,13 @@ if st.session_state.get("authentication_status"):
     st.sidebar.success(f"Welcome {st.session_state.get('name')}!")
 
     st.logo("logo-wavetransition_long.png", size="medium",link="https://www.wavetransition.com/")
+
+    st.sidebar.title("News Ranker")
+
+    # Top News Page (only page!)
+    st.header("📰 WaveTransition Ranked News Application ")
+    st.empty()
+    st.subheader("Articles prioritized based on Machine Learning.")
     
     # 4-c  Simple multi-page navigation
     def home_page():
