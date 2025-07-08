@@ -38,36 +38,20 @@ if st.session_state.get("authentication_status"):
     # 4-b  Greeting
     st.sidebar.success(f"Welcome {st.session_state.get('name')}!")
 
+    st.logo("imagines/logo-wavetransition_long.png", size="medium",link="https://www.wavetransition.com/")
+    
     # 4-c  Simple multi-page navigation
     def home_page():
         st.header("🏠 Home")
         st.write("Put your landing-page widgets here.")
 
-    def data_page():
-        st.header("📊 Data viewer")
-        uploaded = st.file_uploader("Upload a CSV", type="csv")
-        if uploaded:
-            import pandas as pd
-            df = pd.read_csv(uploaded)
-            st.dataframe(df)
-
-    def about_page():
-        st.header("ℹ️ About")
-        st.markdown(
-            """
-            **Demo** Streamlit application protected by
-            `streamlit-authenticator`.
-            """
         )
 
-    page = st.sidebar.radio("Navigate to:", ("Home", "Data", "About"))
+#    page = st.sidebar.radio("Navigate to:", ("Home", "Data", "About"))
 
     if page == "Home":
         home_page()
-    elif page == "Data":
-        data_page()
-    elif page == "About":
-        about_page()
+
 
 # ───────────────────────────────────────────────────────────────
 # 5.  Feedback when login fails or form not yet submitted
