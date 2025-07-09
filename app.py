@@ -58,7 +58,7 @@ if st.session_state.get("authentication_status"):
     
             
     # Sidebar Layout
-    st.sidebar.image("imagines/logo-wavetransition_long.png")  # Logo at top
+    st.sidebar.image("logo-wavetransition_long.png")  # Logo at top
     # Welcome message (sidebar)
     st.sidebar.success(f"Welcome {st.session_state.get('name')}!")
     # Logout at bottom (you may need to adjust authenticator object)
